@@ -6,7 +6,18 @@
 
 .header{
   background-color:darkgrey;
-  
+}
 
+.navbar{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.navbar a{
+  text-decoration: none;
+  background: pink;
+  color: black;
 }
 
