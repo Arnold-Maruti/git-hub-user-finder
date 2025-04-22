@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import SearchBar from './components/SearchBar';
+import './App.css';
+import Header from './components/Header';
+
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -48,6 +51,7 @@ const App = () => {
   return (
     <div style={{ padding: '2rem' }}>
       <h1>GitHub User Finder</h1>
+      <Header/>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
       {loading ? (
