@@ -1,9 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import Repos from './components/Repos';
 
 function App() {
+  
   return (
-   <p>project</p>
+   <Repos />
   );
 }
 

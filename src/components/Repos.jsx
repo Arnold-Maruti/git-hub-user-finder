@@ -1,22 +1,34 @@
 import React from 'react'
+import { useState,useEffect } from 'react'
 
-function Repos({user}) {
-    let myrepos=fetch(`https://api.github.com/search/user/${user}/repos`)
+
+
+
+
+function Repos() {
+  
+    const [repost,setRepo]=useState([])
+
+
+    fetch("https://api.github.com/users/Arnold-Maruti/repos")
     .then(resp=>resp.json())
-    .then(data=>data.map(datas=>
-    {
-        <div>
-            <p>{datas.name}</p>
-        </div>
-    }
-    ))
+    .then(data=>
+        setRepo(data)
+    )
 
   return (
     <div>
-        <tittle>My repositories</tittle>
-        {myrepos}
+        <h1>My repositories</h1>
+        {
+           repost.map(repo=>
+            (
+                <div>
+                    <p>{repo.name}</p>
+                </div>
+            ))
+        }
     </div>
-  )
-}
+  )}
+
 
 export default Repos
