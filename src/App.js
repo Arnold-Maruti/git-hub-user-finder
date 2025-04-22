@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import SearchBar from './Components/SearchBar';
+import SearchBar from './components/SearchBar';
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -15,9 +15,9 @@ const App = () => {
 
       setLoading(true);
       try {
-        const response = await fetch(`https://api.github.com/search/users/${searchTerm}`);
+        const response = await fetch(`https://api.github.com/search/users?q=${searchTerm}`);
         const data = await response.json();
-        setUsers(data|| []);
+        setUsers(data.items|| []);
       } catch (error) {
         console.error("Failed to fetch users:", error);
       } finally {
@@ -32,6 +32,19 @@ const App = () => {
     return () => clearTimeout(timeoutId); 
   }, [searchTerm]);
 
+  const searchedUser=users.map((user) => (
+    <div key={user.id}>
+      <img
+        src={user.avatar_url}
+        alt={user.login}
+        width="40"
+        style={{ borderRadius: '50%', marginRight: '10px' }}
+      />
+      <a href={user.html_url} target="_blank" rel="noreferrer">
+        {user.login}
+      </a>
+    </div>
+  ))
   return (
     <div style={{ padding: '2rem' }}>
       <h1>GitHub User Finder</h1>
@@ -40,21 +53,9 @@ const App = () => {
       {loading ? (
         <p>Loading users...</p>
       ) : (
-        <ul>
-          {users.map((user) => (
-            <li key={user.id}>
-              <img
-                src={user.avatar_url}
-                alt={user.login}
-                width="40"
-                style={{ borderRadius: '50%', marginRight: '10px' }}
-              />
-              <a href={user.html_url} target="_blank" rel="noreferrer">
-                {user.login}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div>
+          {searchedUser}
+        </div>
       )}
     </div>
   );
