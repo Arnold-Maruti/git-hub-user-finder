@@ -1,14 +1,68 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import SearchBar from './components/SearchBar';
 import './App.css';
 import Header from './components/Header';
 
 
-function App() {
+const App = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      if (searchTerm === '') {
+        setUsers([]);
+        return;
+      }
+
+      setLoading(true);
+      try {
+        const response = await fetch(`https://api.github.com/search/users?q=${searchTerm}`);
+        const data = await response.json();
+        setUsers(data.items|| []);
+      } catch (error) {
+        console.error("Failed to fetch users:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    const timeoutId = setTimeout(() => {
+      fetchUsers();
+    }, 500); 
+
+    return () => clearTimeout(timeoutId); 
+  }, [searchTerm]);
+
+  const searchedUser=users.map((user) => (
+    <div key={user.id}>
+      <img
+        src={user.avatar_url}
+        alt={user.login}
+        width="40"
+        style={{ borderRadius: '50%', marginRight: '10px' }}
+      />
+      <a href={user.html_url} target="_blank" rel="noreferrer">
+        {user.login}
+      </a>
+    </div>
+  ))
   return (
-   <div>
-    <Header/>
-   </div>
+    <div style={{ padding: '2rem' }}>
+      <h1>GitHub User Finder</h1>
+      <Header/>
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+
+      {loading ? (
+        <p>Loading users...</p>
+      ) : (
+        <div>
+          {searchedUser}
+        </div>
+      )}
+    </div>
   );
-}
+};
 
 export default App;
