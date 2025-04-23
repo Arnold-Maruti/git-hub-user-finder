@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import SearchBar from './components/SearchBar';
 import './App.css';
 import Header from './components/Header';
+import Navbar from './components/Navbar';
+import { Link } from 'react-router-dom'
 
 
 const App = () => {
@@ -43,15 +45,22 @@ const App = () => {
         width="40"
         style={{ borderRadius: '50%', marginRight: '10px' }}
       />
-      <a href={user.html_url} target="_blank" rel="noreferrer">
-        {user.login}
-      </a>
+   <Link to={`/user/${user.login}`}>
+  {user.login}
+</Link>
+
     </div>
   ))
   return (
     <div style={{ padding: '2rem' }}>
       <h1>GitHub User Finder</h1>
+      <br/>
+      <Navbar/>
+      <br/>
+      <br/>
       <Header/>
+      <br/>
+      <br/>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
       {loading ? (
