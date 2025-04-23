@@ -3,19 +3,32 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ProfileDisplay from './components/ProfileDisplay';
 
 
 
   
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider, Navigate} from 'react-router-dom';
 import ErrorPage from './components/ErrorPage';
 
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App/>,
-    errorElement: <ErrorPage/>
+    path: "/",                     
+    element: <Navigate to="/app" replace />
+  },
+  {
+    path: "/app",
+    element: <App />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/user/:username",
+    element: <ProfileDisplay />
+  },
+  {
+    path: "*",                     
+    element: <ErrorPage />
   }
   
 ])
