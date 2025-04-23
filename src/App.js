@@ -2,11 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SearchBar from './components/SearchBar';
 import './App.css';
 import Header from './components/Header';
-import Navbar from './components/Navbar';
-<<<<<<< HEAD
-=======
 import { Link } from 'react-router-dom'
->>>>>>> 536f95a4da3ff430be26c3072c2a879f140100fc
 
 
 const App = () => {
@@ -57,14 +53,7 @@ const App = () => {
   return (
     <div style={{ padding: '2rem' }}>
       <h1>GitHub User Finder</h1>
-<<<<<<< HEAD
-      <Navbar />
-=======
-      <br/>
-      <Navbar/>
-      <br/>
-      <br/>
->>>>>>> 536f95a4da3ff430be26c
+
       <Header/>
       <br/>
       <br/>
