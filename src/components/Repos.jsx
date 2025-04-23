@@ -6,12 +6,12 @@ import Navbar from './Navbar'
 
 
 
-function Repos() {
+function Repos({user}) {
   
     const [repost,setRepo]=useState([])
 
 
-    fetch("https://api.github.com/users/Arnold-Maruti/repos")
+    fetch(`https://api.github.com/users/${user.login}/repos`)
     .then(resp=>resp.json())
     .then(data=>
         setRepo(data)
