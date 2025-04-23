@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import SearchBar from './components/SearchBar';
 import './App.css';
 import Header from './components/Header';
-import Navbar from './components/Navbar';
 import { Link } from 'react-router-dom'
 
 
@@ -54,10 +53,7 @@ const App = () => {
   return (
     <div style={{ padding: '2rem' }}>
       <h1>GitHub User Finder</h1>
-      <br/>
-      <Navbar/>
-      <br/>
-      <br/>
+
       <Header/>
       <br/>
       <br/>
@@ -71,6 +67,7 @@ const App = () => {
         </div>
       )}
     </div>
+
   );
 };
 

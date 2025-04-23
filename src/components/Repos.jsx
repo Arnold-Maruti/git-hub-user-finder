@@ -1,22 +1,36 @@
 import React from 'react'
+import { useState,useEffect } from 'react'
+import Navbar from './Navbar'
+
+
+
+
 
 function Repos({user}) {
-    let myrepos=fetch(`https://api.github.com/search/user/${user}/repos`)
+  
+    const [repost,setRepo]=useState([])
+
+
+    fetch(`https://api.github.com/users/${user.login}/repos`)
     .then(resp=>resp.json())
-    .then(data=>data.map(datas=>
-    {
-        <div>
-            <p>{datas.name}</p>
-        </div>
-    }
-    ))
+    .then(data=>
+        setRepo(data)
+    )
 
   return (
     <div>
-        <tittle>My repositories</tittle>
-        {myrepos}
+        
+        <h1>My repositories</h1>
+        {
+           repost.map(repo=>
+            (
+                <div>
+                    <p>{repo.name}</p>
+                </div>
+            ))
+        }
     </div>
-  )
-}
+  )}
+
 
 export default Repos
