@@ -64,7 +64,7 @@ const App = () => {
       <Navbar/>
       <br/>
       <br/>
->>>>>>> 536f95a4da3ff430be26c3072c2a879f140100fc
+>>>>>>> 536f95a4da3ff430be26c
       <Header/>
       <br/>
       <br/>
