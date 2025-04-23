@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SearchBar from './components/SearchBar';
 import './App.css';
 import Header from './components/Header';
+import Navbar from './components/Navbar';
 
 
 const App = () => {
@@ -51,6 +52,7 @@ const App = () => {
   return (
     <div style={{ padding: '2rem' }}>
       <h1>GitHub User Finder</h1>
+      <Navbar />
       <Header/>
       <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 

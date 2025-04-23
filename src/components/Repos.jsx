@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
+import Navbar from './Navbar'
 
 
 
@@ -18,6 +19,7 @@ function Repos() {
 
   return (
     <div>
+        
         <h1>My repositories</h1>
         {
            repost.map(repo=>
