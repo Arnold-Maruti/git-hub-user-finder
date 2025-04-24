@@ -37,7 +37,7 @@ const App = () => {
   }, [searchTerm]);
 
   const searchedUser=users.map((user) => (
-    <div key={user.id}>
+    <div className="account"key={user.id}>
       <img
         src={user.avatar_url}
         alt={user.login}
@@ -52,7 +52,7 @@ const App = () => {
   ))
   return (
     <div style={{ padding: '2rem' }}>
-      <h1>GitHub User Finder</h1>
+      <h1 className='appTitle'>GitHub User Finder</h1>
 
       <Header/>
       <br/>
@@ -62,7 +62,7 @@ const App = () => {
       {loading ? (
         <p>Loading users...</p>
       ) : (
-        <div>
+        <div className='displayedDetail'>
           {searchedUser}
         </div>
       )}
