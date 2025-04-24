@@ -32,28 +32,31 @@ function ProfileDisplay() {
   if (!user) return <p>User not found.</p>;
 
   return (
-    
+    <>
+    <Navbar/>
+    <div id="profile">
     <div 
     style={{
       border: '1px solid #ccc',
       padding: '20px',
       borderRadius: '12px',
       backgroundColor: '#fff',
-      maxWidth: '400px',
+      maxWidth: '450px',
       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-    }} >  
-      <Navbar />    
+    }} >    
       <img src={user.avatar_url}
        alt={user.login} 
-       width="100"
-     height="100"
+       width="400"
+     height="400"
      style={{
     borderRadius: '50%', 
     objectFit: 'cover',   
     border: '2px solid #ccc', 
     }}/>
     <br />
+    <br />
     <h2> <strong>{user.name}</strong></h2>
+    <br />
     <p>{user.login}</p>
     <br />
 
@@ -69,6 +72,11 @@ function ProfileDisplay() {
       <FontAwesomeIcon icon={faUsers} /> {user.followers} followers
     </span>
   )}
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
   {user.following > 0 && (
     <span>
       • {user.following} following
@@ -76,14 +84,21 @@ function ProfileDisplay() {
   )}
 </div>
     <br />
+    <br />
     {user.company && <p><FontAwesomeIcon icon={faCity} /> {user.company}</p>}
+    <br />
+    <br />
     {user.location && <p><FontAwesomeIcon icon={faLocationDot} /> {user.location}</p>}
-    {/* {user.email && <p><FontAwesomeIcon icon={faEnvelope} /> {user.email}</p>} */}
-    {user.blog && <p><FontAwesomeIcon icon={faLink} /> {user.blog}</p>}
+    <br />
+    <br />
+    {user.blog && <a href={user.blog} target="_blank"><FontAwesomeIcon icon={faLink} />GitHub Blog</a>}
      
-    <Repos user={user}/>
      </div>
-     
+     <div id="repos">
+     <Repos user={user}/>
+     </div>
+     </div>
+     </>
   );
 
   
