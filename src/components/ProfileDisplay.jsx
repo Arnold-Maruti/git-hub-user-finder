@@ -32,7 +32,8 @@ function ProfileDisplay() {
   if (!user) return <p>User not found.</p>;
 
   return (
-    
+    <>
+    <Navbar /> 
     <div className='profilediv'
     style={{
       border: '1px solid #ccc',
@@ -40,7 +41,7 @@ function ProfileDisplay() {
       borderRadius: '12px',
       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
     }} >  
-      <Navbar />  
+       
       <div className='description'> 
       <div className='left'> 
       <img src={user.avatar_url}
@@ -90,7 +91,7 @@ function ProfileDisplay() {
      
     <Repos user={user}/>
      </div>
-     
+     </>
   );
 
   

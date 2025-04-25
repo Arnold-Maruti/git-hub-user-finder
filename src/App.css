@@ -18,7 +18,7 @@ a {
 
 .navbar{
   display: flex;
-  justify-content: center;
+  justify-content: left;
   text-align: center;
   
 }
@@ -27,6 +27,7 @@ a {
   text-decoration:none;
   color: #ed624e;
   font-size: 40px;
+  
   
 }
 .appTitle{
