@@ -10,14 +10,16 @@
 
 .navbar{
   display: flex;
-  justify-content: center;
-  text-align: center;
+  justify-content: flex-start;
   
 }
 
 .navbar a{
   text-decoration: none;
-  background: pink;
   color: black;
 }
 
+#profile{
+  display: flex;
+  flex-direction: row;
+}
