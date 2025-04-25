@@ -1,79 +1,44 @@
-# Getting Started with Create React App
+                                         GIT HUB USER FINDER
+Project overveiw
+The app has 2 pages :
+     1)home page
+     2)profile page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+     
+The home page is the first page that appears when the app is run. In the home page there is a search bar that 
+is used to search git hub users and display the result of the name searched below it. When the name is 
+clicked the app loads the profile page that displays the user's bio and a list of repositories
 
-## Available Scripts
+In the profile bio there is a link that a user can click to display more details about him or her  from the   
 
-In the project directory, you can run:
+actual git hub website
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The app was deployed using vercel .The live link for the website is 
+               https://git-hub-user-finder-khaki.vercel.app/user/oyieroyier
 
 
 
-DON'T ERASE THIS
-install font awesome
-,,,
-npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
+concepts covered
 
-,,,
+1) useEffect -  This hook is used to fetch data from the git hub rest API in the searchbar component, profile
+   display component and repos component
+
+2)  conditional rendering - The app  only dispalys the accounts of people who are logged in git hub if not an
+   error message will appear saying the account is not found.
+
+3)  routing -When the user name is clicked in the home page the app routes to the profile page.In the profile
+   page there is also a link (HOME) which when clicked  takes the user back to the home page
+
+
+MVP'S
+
+The app satisfies the mvp's conditions as it can search for a git hub account by username, show the account's profile and a list of the user repos
+
+
+collaborators
+The following people where collaborators in this project:
+1)Arnold Maruti (group leader)
+2)Lavender Morara
+3)Alice Mugure
+4)Peter Mutungi
+
