@@ -11,14 +11,16 @@ function Repos({user}) {
     const [repost,setRepo]=useState([])
 
 
-    fetch(`https://api.github.com/users/${user.login}/repos`)
+    useEffect(()=>{fetch(`https://api.github.com/users/${user.login}/repos`)
     .then(resp=>resp.json())
     .then(data=>
         setRepo(data)
-    )
+    )},[user])
+
+    
 
   return (
-    <div>
+    <div className='list'>
         
         <h1>My repositories</h1>
         {

@@ -33,20 +33,20 @@ function ProfileDisplay() {
 
   return (
     
-    <div 
+    <div className='profilediv'
     style={{
       border: '1px solid #ccc',
       padding: '20px',
       borderRadius: '12px',
-      backgroundColor: '#fff',
-      maxWidth: '400px',
       boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
     }} >  
-      <Navbar />    
+      <Navbar />  
+      <div className='description'> 
+      <div className='left'> 
       <img src={user.avatar_url}
        alt={user.login} 
-       width="100"
-     height="100"
+       width="200"
+     height="200"
      style={{
     borderRadius: '50%', 
     objectFit: 'cover',   
@@ -54,14 +54,19 @@ function ProfileDisplay() {
     }}/>
     <br />
     <h2> <strong>{user.name}</strong></h2>
-    <p>{user.login}</p>
+    <h4>Profile Name</h4>
+    <p className='name'> {user.login}</p>
     <br />
-
-    {user.bio && <p> {user.bio}</p>}
+     
+     <h4>My Bio</h4>
+    {user.bio && <p > {user.bio}</p>}
     <br />
     <p>For more details click the link below</p>
-    <a href={user.html_url} target="_blank" rel="noreferrer">View on GitHub</a>
+    <a style={{color:"#e3eced"}}href={user.html_url} target="_blank" rel="noreferrer">View on GitHub</a>
     <br />
+    </div>
+
+    <div className='right'>
     <br />
     <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
   {user.followers > 0 && (
@@ -80,6 +85,8 @@ function ProfileDisplay() {
     {user.location && <p><FontAwesomeIcon icon={faLocationDot} /> {user.location}</p>}
     {/* {user.email && <p><FontAwesomeIcon icon={faEnvelope} /> {user.email}</p>} */}
     {user.blog && <p><FontAwesomeIcon icon={faLink} /> {user.blog}</p>}
+     </div>
+     </div>
      
     <Repos user={user}/>
      </div>
