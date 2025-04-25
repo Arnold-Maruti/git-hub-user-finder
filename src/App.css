@@ -2,24 +2,107 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
+}
+a {
+  text-decoration: none;
+  color: #293239;
 }
 
 .header{
-  background-color:darkgrey;
+  border:1px solid #293239;
+  border-radius: 25px;
+  
+  padding: 10px;
 }
 
 .navbar{
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  text-align: center;
   
 }
 
 .navbar a{
-  text-decoration: none;
+  text-decoration:none;
+  color: #ed624e;
+  font-size: 40px;
+  
+}
+.appTitle{
+  text-align: center;
+  margin: 25px ;
+  color: #ed624e;
+}
+.header h1{
+  text-align: center;
+}
+.header p{
+  font-size: larger;
+}
+.searchbar{
+  margin: 5px 690px;
+}
+.displayedDetail,.account{
+  border: 1px solid #293239;
+  border-radius: 25px;
+  
+ 
+}
+.displayedDetail{
+  display: flex;
+  flex-direction: column;
+  padding: 5px 270px;
+}
+.account, .list div{
+  padding: 5px 200px;
+  margin: 5px 300px;
+  background-color: #d2e5e9;
+  align-items: center;
+}
+p,h1,strong,span{
+  color: #d2e5e9;
+  margin: 30px 0px;
+}
+p{
+  text-align: center;
+}
+.profilediv{
+  margin: 5px 650px;
+  width: 700px;
+}
+.description{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.left,.right{
+  border: 2px solid #ccc;
+  padding: 25px;
+  border-radius: 26px;
+}
+h4{
+  color: #ed624e;
+  margin: 9px;
+  text-decoration: underline;
+}
+.name{
+  margin: 15px;
+  text-align: left;
+}
+.profilediv p,span{
+  margin: 5px;
+  text-align: left;
+}
+.left a:hover{
+  text-decoration: underline;
+}
+.list p{
+  text-align: center;
   color: black;
 }
-
-#profile{
-  display: flex;
-  flex-direction: row;
+.list div{
+   margin: 20px ;
+   border-radius: 25px;
+   
 }
